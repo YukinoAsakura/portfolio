@@ -12,6 +12,13 @@ html{
   font-family: "Yu Gothic","游ゴシック",YuGothic,"游ゴシック体","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3","メイリオ",sans-serif;
 }
 
+body{
+  background-image: url(../img/2x/bk_circle.png),url(../img/2x/bk_circle2.png);
+  background-size: 120% auto,70% auto;
+  background-repeat: no-repeat;
+  background-position: left 150% top 35%,right -30% bottom;
+}
+
 article{
   margin-left: 5%;
   margin-right: 5%;
@@ -20,17 +27,14 @@ article{
 header {
   position: fixed;
   width: 100%;
-  background: #ffffff;
+  background: #ffffff8d;
 }
 
 h1{
   padding-top: 50px;
 }
 
-h1 p{
-  text-align: center;
-  font-size: 1.3rem;
-}
+
 
 h2{
   font-size: 36px;
@@ -68,10 +72,6 @@ header ul li ul {
   background: #ffffff9c;
 }
 
-header ul li{
-  list-style: none;
-}
-
 header ul li a{
 	display:block;
 	padding:20px 40px;
@@ -84,65 +84,111 @@ header ul li a:hover{
 	color:rgb(255, 255, 255);
 }
 
+.top_view{
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  animation: text_animation 3s;
+}
+
+@keyframes text_animation {
+ 0%{
+     opacity: 0%;
+   }
+100%{
+      opacity: 100%;
+   }
+}
+
 .img_top{
-  padding-left: 25%;
-  padding-top: 70px;
-  padding-bottom: 100px;
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  width: 50vw;
+}
+
+.titleText{
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+}
+
+#page_top a{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	background:#e44840;
+	border-radius: 50px;
+	width: 60px;
+	height: 60px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase; 
+	text-decoration: none;
+	font-size:0.6rem;
+	transition:all 0.3s;
+}
+
+#page_top a:hover{
+	background: #05AEBB;
+}
+
+#page_top {
+	position: fixed;
+	right: 10px;
+	bottom:10px;
+	z-index: 2;
+	opacity: 0;
+	transform: translateY(100px);
+}
+
+#page_top.upMove{
+	animation: upAnime 0.5s forwards;
+}
+@keyframes upAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+#page_top.downMove{
+	animation: downAnime 0.5s forwards;
+}
+@keyframes downAnime{
+  from {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(100px);
+  }
 }
 
 .circle{
   margin-bottom: 80px;
   margin-top: 50px;
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   background: linear-gradient(#E44840,#05AEBB);
   text-align:center;
-  line-height: 150px;
-}
-
-.scroll {
-  position: absolute;
-  right: 10%;
-  top: 90%;
-  display: inline-block;
-}
-
-.scroll::before {
-  animation: scroll 3.5s infinite;
-  border: solid #000;
-  border-width: 0 0 1px 1px;
-  content: "";
-  display: inline-block;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  transform: rotate(-45deg);
-  width: 20px;
-  height: 20px;
-}
-@keyframes scroll {
-  0% {
-    transform: rotate(-45deg) translate(0, 0);
-  }
-  80% {
-    transform: rotate(-45deg) translate(-30px, 30px);
-  }
-  0%, 80%, 100% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
+  line-height: 130px;
 }
 
 footer{
   background-color:#05AEBB ;
   margin-top: 5rem;
   padding: 3rem;
+}
+
+#name{
+  font-weight: bold;
+  color: #ffffff;
 }
 
 /*　個別の作品ページ用　*/
@@ -158,15 +204,31 @@ footer{
 
 .skills{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
+.skills img{
+  max-width: 250px;
+  margin-left: 50px;
+}
+
 .skill{
+  display: flex;
   margin: 20px;
   list-style:none;
-  border-radius: 20%;
-  background:#05AEBB;
   text-align:center;
   padding: 0.25em;
+  align-items: center;
+}
+
+.skillBox{
+  display: flex;
+}
+
+.skillBox section{
+  width: 35vw;
+  padding-right: 10vw;
 }
 
 time{
@@ -254,7 +316,6 @@ time{
   padding-left: 1em;
   padding-right: 2em;
   padding-bottom: 2em;
-  justify-content: center;
 }
 .work{
   display: flex;
@@ -284,7 +345,7 @@ time{
 
 button{
   max-width: 250px;
-  width: 100%;
+  width: 70%;
   height: 50px;
   font-size: 16px;
   font-weight: bold;
@@ -292,6 +353,7 @@ button{
   background: #e44840;
   border: none;
   cursor: pointer;
+  border-radius:50px;
 }
 
 button:hover{
@@ -304,16 +366,9 @@ button:hover{
     bottom:0;
     left:0;
     margin:auto;
+    text-align: center;
   }
-  .container{
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: auto;
-  }
+
   .overlay{
     display: none;
     position: fixed;
@@ -325,29 +380,24 @@ button:hover{
     z-index: 10;
   }
   .body{
-    display: table;
-    width: 100%;
-    height: 100%;
-  }
-  .main{
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    padding: 25px;
-  }
-  .content{
     position: relative;
+    text-align: center;
     display: inline-block;
     width: 70vw;
     background: #fff;
     padding: 25px;
     box-sizing: border-box;
   }
-  .text{
-    line-height: 1.8;
-    padding: 0 0 25px;
-  }
+ 
   span{
     display: inline-block;
     text-align: left;
   }
+
+  .tools{
+    font-size: 0.8em;
+  }
+  .description{
+    text-align: left;
+  }
+
