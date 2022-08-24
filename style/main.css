@@ -4,12 +4,12 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Yu Gothic","游ゴシック",YuGothic,"游ゴシック体","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3","メイリオ",sans-serif;
 }
 
 html{
   font-size: 20px;
-  background-color: #FBF6F6;
+  background-color: #ffffff;
+  font-family: "Yu Gothic","游ゴシック",YuGothic,"游ゴシック体","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro W3","メイリオ",sans-serif;
 }
 
 article{
@@ -17,10 +17,10 @@ article{
   margin-right: 5%;
 }
 
-* header {
+header {
   position: fixed;
   width: 100%;
-  background: #e4dadab4;
+  background: #ffffff;
 }
 
 h1{
@@ -47,46 +47,41 @@ img{
   width:100%;
 }
 
-* header ul {
+header ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding-right: 5%;
   list-style: none;
 }
 
-* header ul li {
-  margin-left: 10%;
+header ul li {
   list-style: none;
 }
 
-ul ul{
+header ul li ul {
   display:none;
   position:absolute;
   text-decoration:none;
-  background: #e4dadab4;
+  background: #ffffff9c;
 }
 
-li{
+header ul li{
   list-style: none;
 }
 
-li a{
+header ul li a{
 	display:block;
-	padding:20px 0;
+	padding:20px 40px;
 	color:#353535;
 	text-decoration:none;
 }
 
-li a:hover{
-	color:rgb(16, 107, 211);
-}
-
-#navi > li:last-child > a, nav li:last-child li a{
-	border-right:none;
+header ul li a:hover{
+  background-color: #05AEBB;
+	color:rgb(255, 255, 255);
 }
 
 .img_top{
@@ -250,4 +245,109 @@ time{
   body{
     font-size: 1rem;
   }
+  }
+.works{
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  padding-top: 2em;
+  padding-left: 1em;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  justify-content: center;
+}
+.work{
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  padding-right: 2em;
+}
+.work h4{
+  margin-bottom: 0.5em;
+}
+.work p{
+  margin-bottom: 1em;
+}
+
+
+/*モーダル用css*/
+.modalcontainer{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  z-index: 10;
+  overflow-y: scroll;
+}
+
+button{
+  max-width: 250px;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #e44840;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover{
+    opacity: .7;
+  }
+
+  .open{
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+  }
+  .container{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: auto;
+  }
+  .overlay{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
+  }
+  .body{
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  .main{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px;
+  }
+  .content{
+    position: relative;
+    display: inline-block;
+    width: 70vw;
+    background: #fff;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+  .text{
+    line-height: 1.8;
+    padding: 0 0 25px;
+  }
+  span{
+    display: inline-block;
+    text-align: left;
   }
