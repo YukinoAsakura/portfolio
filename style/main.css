@@ -397,6 +397,11 @@ button:hover{
   .tools{
     font-size: 0.8em;
   }
+
+.url{
+    font-size: 0.8em;
+  }
+
   .description{
     text-align: left;
   }
