@@ -1,25 +1,27 @@
-
 $(function(){  
-    var a = $('.modalcontainer'),
-        b = $('.overlay'),
-        c = $('.open'),
-        d = $('.close'); 
+    var overlay = $('.overlay');
+    var openButtons = $('.open');
+    var closeButtons = $('.close');
+    var modalContainers = $('.modalcontainer');
+        
   
     //OPENをクリックでモーダルを開く
-    c.on('click',function(){
-      a.fadeIn();
-      b.fadeIn();
+    openButtons.on('click',function(event){
+      var target = $(event.target);
+      target.parent().find(".modalcontainer").fadeIn();
+      overlay.fadeIn();
     });
     
     //CLOSEをクリックでモーダルを閉じる
-    d.on('click',function(){
-      a.fadeOut();
-      b.fadeOut();
+    closeButtons.on('click',function(){
+      modalContainers.fadeOut();
+      overlay.fadeOut();
     });
     
     //モーダルの周りをクリックで閉じる
-    b.on('click',function(){
-      a.fadeOut();
-      b.fadeOut();
+    overlay.on('click',function(){
+      modalContainers.fadeOut();
+      overlay.fadeOut();
     });
   });
+  
