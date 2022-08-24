@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet"  href="style/main.css"/>
+    <link rel="stylesheet" href="style/main.css"/>
     <script src="./js/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/modal.js"></script>
-    <title>Document</title>
+    <title>Portfolio by Yukino Asakura</title>
 </head>
 <body>
     <header>
@@ -29,10 +30,16 @@
     </header>
 
     <article>
-        <h1>
-            <div class="img_top"><img alt="name" src="img/name.png"></div>
-            <p>コミュニケーションからデザインを</p>
-        </h1>
+        <div class="top_view">
+            <h1>
+                <span class="img_top"><img alt="portfolio by Yukino Asakura" src="img/name.png"></span> 
+            </h1>
+            <div class="titleText">
+                <p>生活の中で様々な場面で出会うwebサイトの世界をよりわかりやすく楽しいものにするために、<br>
+                作るだけ・デザインするだけでなくそれを両立できる人間になりたいと思っています。</p>
+            </div>
+        </div>
+        <p id="page_top"><a href="#">Page Top</a></p>
 
         <section>
             <div class="overlay"></div>
@@ -43,49 +50,85 @@
                     <div class="works">
                         <div class="work">
                             <section>                            
-                                <p><img alt="kanai" src="img/kanai1.png"></a></p>
+                                <p><img alt="So-dan" src="img/so-dan1.png"></p>
+                                <h4>So-dan</h4>
+                                <p>バイト相談掲示板</p>
+                                <button class="open">詳しく見る</button>
+                                <div class="modalcontainer">
+                                    <div class="body">
+                                        <div>
+                                            <h4>So-dan</h4>
+                                            <p class="tools">illustrator/Django</p>
+                                            <p class="description">　大学3年時の課題でDjangoを用いて制作しました。<br>　大学生専用のバイト探し相談サイト。たくさん働きたい、なるべく好きな時間にシフトに入りたい、接客業のってどんなことをしているのか、などバイトに関するちょっとした相談を気軽にできる掲示板です。
+                                            </p>
+                                            <img alt="ポートフォリオ画像" src="img/so-dan1.png">
+                                            <img alt="ポートフォリオ画像" src="img/so-dan2.png">
+                                            <img alt="ポートフォリオ画像" src="img/so-dan3.png">
+                                            <img alt="ポートフォリオ画像" src="img/so-dan4.png">
+                                        <button class="close">閉じる</button>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <div class="work">
+                            <section>                            
+                                <p><img alt="kanai" src="img/kanai1.png"></p>
                                 <h4>kanai</h4>
                                 <p>買い物リストアプリ</p>
                                 <button class="open">詳しく見る</button>
                                 <div class="modalcontainer">
                                     <div class="body">
-                                        <div class="main">
-                                            <div class="content">
-                                                <p class="text">
-                                                    <div>
-                                                        <h4>kanai</h4>
-                                                        <p>texttexttexttext</p>
-                                                        <img alt="kanai" src="img/kanai1.png">
-                                                        <img alt="kanai" src="img/kanai2.png">
-                                                        <img alt="kanai" src="img/kanai3.png">
-                                                        <img alt="kanai" src="img/kanai4.png">
-                                                        <img alt="kanai" src="img/kanai5.png">
-                                                        <img alt="kanai" src="img/kanai6.png">
-                                                        <img alt="kanai" src="img/kanai7.png">
-                                                    </div>
-                                                </p>
-                                                <button class="close">閉じる</button>
-                                            </div>
+                                        <div>
+                                            <h4>kanai</h4>
+                                            <p class="tools">illustrator/XD</p>
+                                            <p class="description">　IoTが生活に浸透したらどんなことができるのか？を考えました。スーパーなどでの買い忘れを防ぐためのリマインドと残量確認のためのスマートフォンアプリデザインです。</p>
+                                            <img alt="ポートフォリオ画像" src="img/kanai1.png">
+                                            <img alt="ポートフォリオ画像" src="img/kanai2.png">
+                                            <img alt="ポートフォリオ画像" src="img/kanai3.png">
+                                            <img alt="ポートフォリオ画像" src="img/kanai4.png">
+                                            <img alt="ポートフォリオ画像" src="img/kanai5.png">
+                                            <img alt="ポートフォリオ画像" src="img/kanai6.png">
+                                            <img alt="ポートフォリオ画像" src="img/kanai7.png">
+                                            <img alt="ポートフォリオ画像" src="img/kanai8.png">
+                                            <img alt="ポートフォリオ画像" src="img/kanai9.png">
+                                            <img alt="ポートフォリオ画像" src="img/kanai10.png">
                                         </div>
+                                        <button class="close">閉じる</button>
                                     </div>
                                 </div>
                             </section>
                         </div>
-                        
+
                         <div class="work">
-                            <section>
-                            <h4>Wa!菓子</h4>
-                                <p>若者向け和菓子紹介のスマホサイト</p>
-                                <p><img alt="Wa!菓子" src=""></p>
-                            </section>
-                        </div>
-                        
-                        <div class="work">
-                            <section>
-                                <p><img alt="kanai" src="img/so-dan1.png"></p>
-                                <h4>So-dan</h4>
-                                <p>大学生専用のバイトを始めるときに相談するサイト</p>
-                                <p><img alt="kanai" src="img/so-dan1.png"></p>
+                            <section>                            
+                                <p><img alt="kanai" src="img/ふらっとプラット1.png"></p>
+                                <h4>ふらっとプラット1</h4>
+                                <p>買い物リストアプリ</p>
+                                <button class="open">詳しく見る</button>
+                                <div class="modalcontainer">
+                                    <div class="body">
+                                        <div>
+                                            <h4>ふらっとプラット</h4>
+                                            <p class="tools">illustrator/Photoshop/XD</p>
+                                            <p class="description">　大学3年時のグループワークで、デザインを担当しました。誰でも気軽にイベントを開催、また参加できるようなオンライン展示会プラットフォームです。</p>
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット1.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット2.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット3.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット4.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット5.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット6.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット7.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット8.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット9.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット10.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット11.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット12.png">
+                                            <img alt="ポートフォリオ画像" src="img/ふらっとプラット13.png">
+                                        </div>
+                                        <button class="close">閉じる</button>
+                                    </div>
+                                </div>
                             </section>
                         </div>
                     </div>
@@ -97,29 +140,23 @@
                 <div class="works">
                     <div class="work">
                         <section>
-                            <p><img alt="dr_apple" src="img/dr_apple1.png"></a></p>
+                            <p><img alt="dr_apple" src="img/dr_apple1.png"></p>
                             <h4>Dr.Apple</h4>
                             <p>健康志向のりんごのパッケージデザイン</p>
                             <button class="open">詳しく見る</button>
                             <div class="modalcontainer">
                                 <div class="body">
-                                    <div class="main">
-                                        <div class="content">
-                                            <p class="text">
-                                                <div>
-                                                    <h4>De.Apple</h4>
-                                                    <p>Photoshop,illustrator</p>
-                                                    <img alt="dr_apple" src="img/dr_apple1.png">
-                                                    <img alt="dr_apple" src="img/dr_apple2.png">
-                                                    <img alt="dr_apple" src="img/dr_apple3.png">
-                                                    <img alt="dr_apple" src="img/dr_apple4.png">
-                                                    <img alt="dr_apple" src="img/dr_apple5.png">
-                                                    <img alt="dr_apple" src="img/dr_apple6.png">
-                                                </div>
-                                            </p>
-                                            <button class="close">閉じる</button>
-                                        </div>
+                                    <div>
+                                        <h4>De.Apple</h4>
+                                        <p class="tools">Photoshop,illustrator</p>
+                                        <img alt="ポートフォリオ画像" src="img/dr_apple1.png">
+                                        <img alt="ポートフォリオ画像" src="img/dr_apple2.png">
+                                        <img alt="ポートフォリオ画像" src="img/dr_apple3.png">
+                                        <img alt="ポートフォリオ画像" src="img/dr_apple4.png">
+                                        <img alt="ポートフォリオ画像" src="img/dr_apple5.png">
+                                        <img alt="ポートフォリオ画像" src="img/dr_apple6.png">
                                     </div>
+                                    <button class="close">閉じる</button>
                                 </div>
                             </div>
                         </section>
@@ -128,47 +165,80 @@
             </section>
             <section>
                 <h3 id="graphic">グラフィックデザイン</h3>
-                <section>
-                    <h4>みーちゅの新しい新歓様式</h4>
-                    <p>サークルで作ったオンライン新歓イベントで使用した注意喚起動画の素材</p>
-                    <p><img alt="みーちゅ" src=""></p>
-                </section>
-                <section>
-                    <h4>サークル紹介</h4>
-                    <p>新歓サイトに掲載されていたサークル紹介資料</p>
-                </section>
+                <div class="works">
+                    <div class="work">
+                        <section>
+                            <p><img alt="INIAD Times" src="img/logo_times.png"></p>
+                            <h4>INIAD Times</h4>
+                            <p>学部内向け情報サイトのロゴ</p>
+                            <button class="open">詳しく見る</button>
+                            <div class="modalcontainer">
+                                <div class="body">
+                                    <div>
+                                        <h4>INIAD Times</h4>
+                                        <p class="tools">illustrator</p>
+                                        <img alt="ポートフォリオ画像" src="img/logo_times.png">
+                                    </div>
+                                    <button class="close">閉じる</button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="work">
+                        <section>
+                            <p><img alt="INIAD meets web" src="img/logo_meets.png"></p>
+                            <h4>INIAD meets web</h4>
+                            <p>オンライン新入生歓迎会のロゴ</p>
+                            <button class="open">詳しく見る</button>
+                            <div class="modalcontainer">
+                                <div class="body">
+                                    <div>
+                                        <h4>INIAD meets web</h4>
+                                        <p>illustrator</p>
+                                        <img alt="ポートフォリオ画像" src="img/logo_meets.png">
+                                    </div>
+                                    <button class="close">閉じる</button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </section>
         </section>
         <section id="skills">
             <h2 class="circle">Skills</h2>
-            <section>
-                <h3>design</h3>
-                <ul class="skills">
-                    <li class="skill">Ps</li>
-                    <li class="skill">Ai</li>
-                    <li class="skill">Xd</li>
-                </ul>
-            </section>
-            <section>
-                <h3>coding</h3>
-                <ul class="skills">
-                    <li class="skill">HTML</li>
-                    <li class="skill">CSS</li>
-                    <li class="skill">Java Script</li>
-                </ul>
-            </section>
+            <div class="skillBox">
+                <section>
+                    <h3>design</h3>
+                    <ul class="skills">
+                        
+                        <li class="skill"><img alt="illustrator" src="img/2x/illustrator.png"></li>
+                        <li class="skill"><img alt="Photoshop" src="img/2x/Photoshop.png"></li>
+                        <li class="skill"><img alt="XD" src="img/2x/XD.png"></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>coding</h3>
+                    <ul class="skills">
+                        <li class="skill">HTML<img alt="str3" src="img/2x/or_str3.png"></li>
+                        <li class="skill">CSS<img alt="str2" src="img/2x/bl_str2.png"></li>
+                        <li class="skill">JavaScript<img alt="str3" src="img/2x/bl_str2.png"></li>
+                        <li class="skill">Django<br>(python)<img alt="str3" src="img/2x/pn_str3.png"></li>
+                    </ul>
+                </section>
+            </div>
         </section>
     </article>
     <footer>
         <section id="contact">
             <h2>Contact</h2>
-            <p>朝倉雪乃</p>
+            <p id="name">朝倉雪乃</p>
             <p>東洋大学情報連携学部情報連携学科デザインコース</p>
             <dl>
                 <dt>e_mail</dt>
-                <dd>s1f101903344@iniad.org</dd>
+                <dd>yukino.asakura0271@gmail.com</dd>
             </dl>
-            <img alt="自分の写真" src="">
         </section>
     </footer>
 
