@@ -258,56 +258,6 @@ time{
   margin-left:5% ;
 }
 
-/* レスポンシブ用 */
-/* スマホ */
-@media screen and (max-width:599px) {
-  body{
-    font-size: 1rem;
-  }
-  .scroll {
-    position: relative;
-    padding-top: 70px;
-    display: inline-block;
-  }
-  .txt{
-    padding-left: 43%;
-  }
-  .concept_top{
-    display: flex;
-    flex-direction: column;
-  }
-  .concept_img{
-    width: auto;
-  }
-  .concept_txt{
-    width: auto;
-  }
-  .detail{
-    display: flex;
-    flex-direction: column;
-  }
-  .detail_img{
-    width: auto;
-  }
-  .detail_txt{
-    width: auto;
-    margin-left: 0;
-  }
-  }
-   
-  /* タブレット */
-  @media screen and (min-width:600px) and (max-width:959px) {
-  body{
-    font-size: 0.9rem;
-  }
-  }
-   
-  /* PC用 */
-  @media screen and (min-width:960px){
-  body{
-    font-size: 1rem;
-  }
-  }
 .works{
   display: flex;
   flex-direction: row;
@@ -397,12 +347,92 @@ button:hover{
   .tools{
     font-size: 0.8em;
   }
-
-.url{
+  .url{
     font-size: 0.8em;
   }
-
   .description{
     text-align: left;
   }
 
+@media screen and (max-width:599px) {
+  body{
+    font-size: 0.9rem;
+  }
+  header ul li a{
+    padding:10px 10px;
+  }
+  .top_view{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img_top{
+    width: 100%;
+  }
+
+  .top_view img{
+    width: 90vw;
+  }
+  #page_top {
+    right: 10vw;
+    bottom: 5vh;
+  }
+  .scroll {
+    position: relative;
+    padding-top: 70px;
+    display: inline-block;
+  }
+  .txt{
+    padding-left: 43%;
+  }
+  .works{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .work{
+    width: 90vw;
+  }
+  .concept_img{
+    width: auto;
+  }
+  .concept_txt{
+    width: auto;
+  }
+  .skills img{
+    margin-left: 0;
+  }
+  
+  .skillBox{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .skillBox section {
+    width: 90vw;
+    padding-right: 10vw;
+  }
+  .skill{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #contact dd{
+    word-break:break-word;
+    width: 99%;
+  }
+  }
+   
+  /* タブレット */
+  @media screen and (min-width:600px) and (max-width:959px) {
+  body{
+    font-size: 0.9rem;
+  }
+  }
+   
+  /* PC用 */
+  @media screen and (min-width:960px){
+  body{
+    font-size: 1rem;
+  }
+  }
