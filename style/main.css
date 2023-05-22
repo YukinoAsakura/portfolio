@@ -272,6 +272,7 @@ time{
   flex-direction: column;
   width: 30vw;
   padding-right: 2em;
+  padding-buttom:2em;
 }
 .work h4{
   margin-bottom: 0.5em;
@@ -294,6 +295,7 @@ time{
 }
 
 button{
+  display:block;
   max-width: 250px;
   width: 70%;
   height: 50px;
