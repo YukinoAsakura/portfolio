@@ -1,0 +1,19 @@
+{
+    "https://example.com/page1": [
+      "\\b文字列A\\b",
+      "\\b文字列B\\b"
+    ],
+    "https://example.com/page2": [
+      "\\b文字列X\\b",
+      "\\b文字列Y\\b"
+    ],
+    "https://yahoo.co.jp/news": [
+      "ニュース",
+      "速報"
+    ],
+    "default": [
+      "共通文字1",
+      "共通文字2"
+    ]
+  }
+  
