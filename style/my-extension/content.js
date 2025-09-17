@@ -1,43 +1,64 @@
-// ページ内検索とハイライトを行う関数
+// ページ上に表示されるテキストのみを検索し、ハイライトして件数を返す
 async function checkAndHighlight() {
     try {
-      const response = await fetch(chrome.runtime.getURL('targets.json'));
+      // targets.json を取得
+      const response = await fetch(chrome.runtime.getURL("targets.json"));
       const targetData = await response.json();
   
-      const currentURL = window.location.href; // URL全体
-      let regexList = targetData['default'];   // デフォルト
+      const currentURL = window.location.href;
+      let regexList = targetData['default'];
   
-      // prefix一致で検索ワードを切り替え
+      // URL prefix 一致で検索ワード切替
       for (const key in targetData) {
         if (key !== "default" && currentURL.startsWith(key)) {
           regexList = targetData[key];
-          break; // 最初にマッチしたものだけを使用
+          break;
         }
       }
   
-      const bodyHTML = document.body.innerHTML;
-      let newHTML = bodyHTML;
-      const foundItems = [];
+      // 正規表現配列に変換
+      const compiledRegexList = regexList.map(pat => new RegExp(pat, "g"));
   
-      regexList.forEach(pattern => {
-        const regex = new RegExp(pattern, "gi");
-        let match;
-        while ((match = regex.exec(bodyHTML)) !== null) {
-          foundItems.push(match[0]);
+      const results = [];
+  
+      // 再帰的にテキストノードを走査してハイライト
+      function walk(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const text = node.nodeValue;
+          compiledRegexList.forEach(regex => {
+            if (regex.test(text)) {
+              // ハイライト用 span を作成
+              const span = document.createElement("span");
+              span.innerHTML = text.replace(regex, match => `<mark class="highlight">${match}</mark>`);
+              node.parentNode.replaceChild(span, node);
+              results.push(text);
+            }
+          });
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          const style = window.getComputedStyle(node);
+          // 非表示・スクリプト・スタイル・ハイライト済みは除外
+          if (
+            style.display === "none" ||
+            style.visibility === "hidden" ||
+            ["SCRIPT", "STYLE", "NOSCRIPT"].includes(node.tagName) ||
+            node.classList.contains("highlight")
+          ) return;
+  
+          [...node.childNodes].forEach(walk);
         }
-        newHTML = newHTML.replace(regex, match => `<mark style="background:yellow;">${match}</mark>`);
-      });
+      }
   
-      document.body.innerHTML = newHTML;
+      walk(document.body);
   
-      return foundItems;
+      return results;
+  
     } catch (err) {
-      console.error("targets.jsonの読み込みに失敗しました", err);
+      console.error("targets.jsonの読み込みに失敗しました:", err);
       return [];
     }
   }
   
-  // ポップアップから呼び出せるようにリスナーを登録
+  // ポップアップから呼び出すためのリスナー
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "check") {
       checkAndHighlight().then(foundItems => {
