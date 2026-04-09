@@ -8,11 +8,9 @@ chrome.storage.sync.get("rules", (data) => {
 saveBtn.addEventListener("click", () => {
   try {
     const parsed = JSON.parse(textarea.value);
-
     parsed.rules.forEach(rule => {
       rule.patterns.forEach(p => new RegExp(p));
     });
-
     chrome.storage.sync.set({ rules: parsed.rules });
     alert("保存しました");
   } catch (e) {
